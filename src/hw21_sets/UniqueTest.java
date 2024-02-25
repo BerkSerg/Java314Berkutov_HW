@@ -13,6 +13,7 @@ import java.util.Set;
 public class UniqueTest {
     public static void main(String[] args) {
         System.out.println(isStringContainsUniqueSymbols("sadf3q2eg"));
+        System.out.println(isStringContainsUniqueSymbols("s3adf3q2eg"));
     }
 
     private static boolean isStringContainsUniqueSymbols(String testString) {
