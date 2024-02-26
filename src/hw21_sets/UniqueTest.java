@@ -17,8 +17,7 @@ public class UniqueTest {
     }
 
     private static boolean isStringContainsUniqueSymbols(String testString) {
-        Set<String> stringSet = new HashSet<>();
-        stringSet.addAll(List.of(testString.split("")));
+        Set<String> stringSet = new HashSet<>(List.of(testString.split("")));
         return (testString.length() == stringSet.size());
     }
 }
