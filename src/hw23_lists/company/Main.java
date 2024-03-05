@@ -1,10 +1,10 @@
 package hw23_lists.company;
 
-import hw23_lists.company.abstractclasses.Employee;
 import hw23_lists.company.classes.Company;
 import hw23_lists.company.classes.Manager;
 import hw23_lists.company.classes.Operator;
 import hw23_lists.company.classes.TopManager;
+import hw23_lists.company.interfaces.IEmployee;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -76,7 +76,7 @@ public class Main {
         }
 
         // hire managers with hireAll
-        List<Employee> managersToHire = new ArrayList<>();
+        List<IEmployee> managersToHire = new ArrayList<>();
         for (int i = 0; i < 80; i++) {
             managersToHire.add(new Manager(rnd.nextInt(700, 1300) * 100, rnd.nextInt(115, 140) * 1000));
         }

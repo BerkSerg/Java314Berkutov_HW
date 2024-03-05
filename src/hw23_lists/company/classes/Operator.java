@@ -1,10 +1,11 @@
 package hw23_lists.company.classes;
 
-import hw23_lists.company.abstractclasses.Employee;
+import hw23_lists.company.interfaces.IEmployee;
 
 import static hw23_lists.company.Main.df;
 
-public class Operator extends Employee {
+public class Operator implements IEmployee, Comparable<IEmployee> {
+    protected double salary;
     public Operator(double salary) {
         this.salary = salary;
     }

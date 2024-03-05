@@ -1,10 +1,11 @@
 package hw23_lists.company.classes;
 
-import hw23_lists.company.abstractclasses.Employee;
+import hw23_lists.company.interfaces.IEmployee;
 
 import static hw23_lists.company.Main.df;
 
-public class TopManager extends Employee {
+public class TopManager implements IEmployee, Comparable<IEmployee> {
+    private double salary;
     Company company;
     private final double personalBonus = 1.5;
 

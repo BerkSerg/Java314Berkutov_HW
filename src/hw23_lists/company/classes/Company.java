@@ -1,12 +1,12 @@
 package hw23_lists.company.classes;
 
-import hw23_lists.company.abstractclasses.Employee;
+import hw23_lists.company.interfaces.IEmployee;
 
 import java.util.*;
 
 public class Company {
     private final String companyName;
-    private final List<Employee> employees = new ArrayList<>();
+    private final List<IEmployee> employees = new ArrayList<>();
     private double income;
 
     public Company(String companyName) {
@@ -25,11 +25,11 @@ public class Company {
         return employees.size();
     }
 
-    public Employee getEmployeeByIndex(int index) {
+    public IEmployee getEmployeeByIndex(int index) {
         return employees.get(index);
     }
 
-    public String hire(Employee employee) {
+    public String hire(IEmployee employee) {
         String error = "";
         if (employees.contains(employee)) {
             error = "Сотрудник " + employee + " уже устроен в данной компании";
@@ -38,10 +38,10 @@ public class Company {
         return error;
     }
 
-    public List<String> hireAll(Collection<Employee> employeeList) {
+    public List<String> hireAll(Collection<IEmployee> employeeList) {
         List<String> errors = new ArrayList<>();
         String error;
-        for (Employee employee : employeeList) {
+        for (IEmployee employee : employeeList) {
             error = hire(employee);
             if (!error.isEmpty()) {
                 errors.add(error);
@@ -50,7 +50,7 @@ public class Company {
         return errors;
     }
 
-    public String fire(Employee employee) {
+    public String fire(IEmployee employee) {
         String error = "";
         if (!employees.contains(employee)) {
             error = "Сотрудник " + employee + " не работает в данной компании";
@@ -64,13 +64,13 @@ public class Company {
         return income;
     }
 
-    public List<Employee> getTopSalaryStaff(int count) {
-        Set<Employee> employeeSet = new TreeSet<>(employees).reversed();
+    public List<IEmployee> getTopSalaryStaff(int count) {
+        Set<IEmployee> employeeSet = new TreeSet<>(employees).reversed();
         if (count > employees.size()) {
-            return (List<Employee>) employeeSet;
+            return (List<IEmployee>) employeeSet;
         } else {
-            List<Employee> resultList = new ArrayList<>();
-            Iterator<Employee> it = employeeSet.iterator();
+            List<IEmployee> resultList = new ArrayList<>();
+            Iterator<IEmployee> it = employeeSet.iterator();
             for (int i = 0; i < count; i++) {
                 resultList.add(it.next());
             }
@@ -78,13 +78,13 @@ public class Company {
         }
     }
 
-    public List<Employee> getLowestSalaryStaff(int count) {
-        Set<Employee> employeeSet = new TreeSet<>(employees);
+    public List<IEmployee> getLowestSalaryStaff(int count) {
+        Set<IEmployee> employeeSet = new TreeSet<>(employees);
         if (count > employees.size()) {
-            return (List<Employee>) employeeSet;
+            return (List<IEmployee>) employeeSet;
         } else {
-            List<Employee> resultList = new ArrayList<>();
-            Iterator<Employee> it = employeeSet.iterator();
+            List<IEmployee> resultList = new ArrayList<>();
+            Iterator<IEmployee> it = employeeSet.iterator();
             for (int i = 0; i < count; i++) {
                 resultList.add(it.next());
             }

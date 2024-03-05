@@ -1,10 +1,11 @@
 package hw23_lists.company.classes;
 
-import hw23_lists.company.abstractclasses.Employee;
+import hw23_lists.company.interfaces.IEmployee;
 
 import static hw23_lists.company.Main.df;
 
-public class Manager extends Employee {
+public class Manager implements IEmployee, Comparable<IEmployee> {
+    private double salary;
     private double incomeForCompany;
     private double personalBonus = 5;
 
