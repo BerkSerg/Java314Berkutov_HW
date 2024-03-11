@@ -1,7 +1,6 @@
 package hw24_maps.treemap;
 
 import java.util.*;
-import java.util.function.Predicate;
 
 
 /**
@@ -18,9 +17,7 @@ public class GetSubMap {
         }
         System.out.println(testMap);
 
-        TreeSet<Integer> set = new TreeSet<>(testMap.keySet());
-        Set<Integer> subsetKeys = set.subSet(15, 40);
-
+        Set<Integer> subsetKeys = new TreeSet<>(testMap.keySet()).subSet(15, 40);
         for (Integer key : subsetKeys){
             System.out.println(testMap.get(key));
         }
