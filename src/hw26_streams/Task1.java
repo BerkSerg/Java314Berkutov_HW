@@ -21,7 +21,7 @@ public class Task1 {
         initPersons();
 
         List<String> ladies = persons.stream()
-                .filter(person -> person.getGender() == Gender.FEMALE && person.getAge() > 18)
+                .filter(person -> person.getGender() == Gender.FEMALE && person.getAge() >= 18)
                 .map(Person::getName)
                 .collect(Collectors.toList());
 
