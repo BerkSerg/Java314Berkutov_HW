@@ -2,7 +2,6 @@ package hw26_streams;
 
 
 import java.util.Random;
-import java.util.Set;
 import java.util.TreeSet;
 
 /**
@@ -26,7 +25,7 @@ public class Task2 {
                 .map(Integer::parseInt)
                 .filter(number -> number % 2 == 0)
                 .map(String::valueOf)
-                .reduce("", (a, b) -> a.equals("") ? b : a + "," + b);
+                .reduce("", (a, b) -> a.isEmpty() ? b : a + "," + b);
 
         System.out.println(result);
     }
