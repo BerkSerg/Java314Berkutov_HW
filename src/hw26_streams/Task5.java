@@ -19,7 +19,7 @@ public class Task5 {
         List<String> listOfStrings = new ArrayList<>();
         try {
             Scanner scanner = new Scanner(new File("src\\hw26_streams\\data\\SimpleTextFile.txt"));
-            while (scanner.hasNextLine()){
+            while (scanner.hasNextLine()) {
                 listOfStrings.add(scanner.nextLine());
             }
             scanner.close();

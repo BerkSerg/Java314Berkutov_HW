@@ -18,12 +18,12 @@ public class Task6 {
         }
 
         long start = System.currentTimeMillis();
-        long result = numbers.stream().reduce(0, (x,y) -> x + (y * y));
+        long result = numbers.stream().reduce(0, (x, y) -> x + (y * y));
         System.out.println(System.currentTimeMillis() - start);
         System.out.println(result);
 
         long start2 = System.currentTimeMillis();
-        long result2 = numbers.parallelStream().reduce(0, (x,y) -> x + (y * y));
+        long result2 = numbers.parallelStream().reduce(0, (x, y) -> x + (y * y));
         System.out.println(System.currentTimeMillis() - start2);
         System.out.println(result2);
 

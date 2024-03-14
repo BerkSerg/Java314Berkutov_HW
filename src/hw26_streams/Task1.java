@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
  */
 public class Task1 {
     private final static ArrayList<Person> persons = new ArrayList<>();
+
     public static void main(String[] args) {
         initPersons();
 
@@ -28,7 +29,7 @@ public class Task1 {
 
     }
 
-    private static void initPersons(){
+    private static void initPersons() {
         persons.add(new Person("Дима", 20, Gender.MALE));
         persons.add(new Person("Оксана", 16, Gender.FEMALE));
         persons.add(new Person("Вася", 17, Gender.MALE));
