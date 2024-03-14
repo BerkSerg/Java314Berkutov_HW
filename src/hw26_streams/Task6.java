@@ -1,7 +1,6 @@
 package hw26_streams;
 
 
-import java.util.Random;
 import java.util.TreeSet;
 
 /**
@@ -14,7 +13,6 @@ public class Task6 {
     public static void main(String[] args) {
         TreeSet<Integer> numbers = new TreeSet<>();
 
-        int res =0;
         for (int i = 1; i < 150001; i++) {
             numbers.add(i);
         }
@@ -29,7 +27,7 @@ public class Task6 {
         System.out.println(System.currentTimeMillis() - start2);
         System.out.println(result2);
 
-        /**Поэкспериментировал:
+        /* Поэкспериментировал:
          * На небольших данных(мало элементов) работает одинаково, плюс-минус...
          * Но на больших данных (много элементов) параллельныйе потоки работают дольше, так как разделение на потоки и
          *  соединение обратно занимает дополнительное время, чем больше данных тем сложнее разделять и собирать обратно.
