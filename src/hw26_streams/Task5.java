@@ -30,7 +30,11 @@ public class Task5 {
         String strForFilter = "список";
         Predicate<String> filter = s -> s.toLowerCase().contains(strForFilter);
 
-        listOfStrings.stream().filter(filter).forEach(System.out::println);
-
+        final int[] linesCount = new int[1];
+        listOfStrings.stream().filter(filter).forEach(line -> {
+            System.out.println(line);
+            linesCount[0]++;
+        });
+        System.out.println("Количество отфильтрованных строк: " + linesCount[0]);
     }
 }
